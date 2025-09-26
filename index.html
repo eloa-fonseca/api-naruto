@@ -5,38 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API</title>
+    <script src="./js/personagem.js"></script>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
     <header>
+        <video autoplay muted loop>
+            <source src="c:\Users\eloa.fsantos\Downloads\6912155_Motion_Graphics_Motion_Graphic_3840x2160.mp4">
+        </video>
 <h1>Conheça os personagens de Naruto</h1>
 </header>
 
     <form id="enderecoForm">
-        <label for="name">Personagens:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite o nome do persongem" required>
+        <label for="personagem">Personagens:</label>
+        <input type="text" id="personagem" name="personagem" placeholder="Digite o nome do persongem" required>
 
         <button type="button" onclick="buscaPersonagem()">Enviar</button>
         <button type="button" onclick="limparDados()">Limpar</button>
 
+
         <label for="father">Nome do pai:</label>
-        <input type="text" id="pai" name="pai" placeholder="Digite nome do Pai" disabled>
+        <input type="text" id="pai" name="pai" placeholder="Digite nome do Pai">
 
         <label for="father">Nome da mãe:</label>
-        <input type="text" id="mae" name="mae" placeholder="Digite nome da Mãe" disabled>
+        <input type="text" id="mae" name="mae" placeholder="Digite nome da Mãe">
 
         <label for="father">Vila:</label>
-        <input type="text" id="vila" name="vila" placeholder="Digite a vila" disabled>
+        <input type="text" id="vila" name="vila" placeholder="Digite a vila">
 
         <label for="father">Rank:</label>
-        <input type="text" id="rank" name="rank" placeholder="Digite o rank" disabled>
+        <input type="text" id="rank" name="rank" placeholder="Digite o rank" >
 
         <label for="father">Resumo do Personagem:</label>
-        <input type="text" id="resumo" name="resumo" disabled>
+        <input type="text" id="resumo" name="resumo" >
+          
+        <label for="father">Power:</label>
+        <input type="text" id="power" name="power" placeholder="Digite o power">
+
+        <label for="father">Jutsus:</label>
+        <input type="text" id="Jutsus" name="jutsus" placeholder="Digite o Jutsus">
+
 
 </form>
 
-<img src="" alt="">
+<div id="resultDiv">
+
+
+
+</div>
+
 
 
 
