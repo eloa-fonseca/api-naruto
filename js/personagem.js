@@ -51,5 +51,12 @@ async function buscaPersonagem() {
 }
 
 function limparDados(){
-    txtNome
+    txtNome.value = "";
+    txtPai.value = "";
+    txtMae.value = "";
+    txtVila.value = "";
+    txtRank.value = "";
+    txtResumo.value = "";
+    txtPower.value = "";
+    txtJutsus.value = "";
 }
