@@ -1,4 +1,5 @@
-const txtNome = document.querySelector('#personagem')
+const txtPersonagem = document.querySelector('#personagem')
+const txtNome = document.querySelector('#nome');                               
 const txtPai = document.querySelector('#pai');
 const txtMae = document.querySelector('#mae');
 const txtVila = document.querySelector('#vila');
@@ -29,15 +30,21 @@ async function buscaPersonagem() {
                 txtNome.value = dados.name || "Nome não informado";
                 txtPai.value = dados.family?.father || "Desconhecido";
                 txtMae.value = dados.family?.mother || "Desconhecida";
-                txtVila.value = dados.village || "Não informado";
+                txtVila.value = typeof dados.village === "object" 
+                ? dados.village.name || "Não informado" // Ajuste conforme a estrutura do objeto
+                 : dados.village || "Não informado";
+
                 txtRank.value = dados.rank || " Não informado";
-                txtResumo.value = dados.info || "Sem resumo disponível";
+                txtResumo.value = dados.summary || "Sem resumo disponível";
                 txtPower.value = dados.power || "Não informado";
-                txtJutsus.value = (dados.jutsus && dados.jutsus.length > 0) 
-                ? dados.jutsus.join(", ") 
-                : "Nenhum jutsu cadastrado";
+                txtJutsus.value = Array.isArray(dados.jutsus) && dados.jutsus.length > 0
+                ? dados.jutsus.map(j => j.name).join(", ")
+                : "Nenhum Jutsus cadastrado";
+            
             }
 
+            console.log(dados.village);
+            console.log(dados.jutsus.join(", "));
 
         })
         .catch(err =>{
@@ -50,7 +57,8 @@ async function buscaPersonagem() {
 
 }
 
-function limparDados(){
+function limparDados() {
+    txtPersonagem.value = "";
     txtNome.value = "";
     txtPai.value = "";
     txtMae.value = "";
@@ -59,4 +67,6 @@ function limparDados(){
     txtResumo.value = "";
     txtPower.value = "";
     txtJutsus.value = "";
-}
+    document.querySelector('#resultDiv').innerHTML = "";
+  }
+  
